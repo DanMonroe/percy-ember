@@ -35,7 +35,7 @@ function scopeDOM(dom, { scope, domTransformation }) {
   if (!$scoped) return;
 
   // replace body content with scoped content
-  $body.innerHTML = $scoped.innerHTML;
+  $body.replaceChildren(...$scoped.children);
 
   // copy scoped attributes to the body element
   for (let i = 0; i < $scoped.attributes.length; i++) {
